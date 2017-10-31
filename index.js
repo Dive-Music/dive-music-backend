@@ -18,7 +18,7 @@ app.get("/", (req, res) =>{
     res.sendfile(path.resolve(__dirname, "client", "build", "index"))
 })
 
-mongoose.connect(process.env.DATABASE, (err) =>{
+mongoose.connect(config.database, (err) =>{
     if (err) throw err
     console.log("connected to MongoDb");
     app.listen(config.PORT, ()=>{
